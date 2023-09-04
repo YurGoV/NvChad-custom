@@ -7,3 +7,16 @@ call undefault config folder:
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nv="NVIM_APPNAME=NvChad nvim"
 (config folder is ~/.config/NvChad)
+
+must be installed by Mason:
+clang-format
+clangd
+css-lsp
+deno
+eslint-d
+html-lsp
+lua-language-server
+prettier
+stylya
+typescript-language-server
+
