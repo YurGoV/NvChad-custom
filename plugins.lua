@@ -26,7 +26,32 @@ local plugins = {
   }, -- override plugin configs
   { "williamboman/mason.nvim", opts = overrides.mason },
 
+  -- orig
   { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
+  -- custom
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = {
+  --     ensure_installed = {
+  --       -- defaults
+  --       "vim",
+  --       "lua",
+  --
+  --       -- web dev
+  --       "html",
+  --       "css",
+  --       "javascript",
+  --       "typescript",
+  --       "tsx",
+  --       "json",
+  --       -- "vue", "svelte",
+  --
+  --       -- low level
+  --       -- "c",
+  --       -- "zig",
+  --     },
+  --   },
+  -- },
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
@@ -230,7 +255,18 @@ local plugins = {
       }
     end,
   },
+  -- TO DELETE
+  {
+    "robitx/gp.nvim",
+    config = function()
+      require("gp").setup()
 
+      -- or setup with your own config (see Install > Configuration in Readme)
+      -- require("gp").setup(conf)
+
+      -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
+    end,
+  },
   -- {
   --   "Exafunction/codeium.vim",
   --   lazy = false,
@@ -241,6 +277,7 @@ local plugins = {
   -- 	name = "catppuccin",
   -- 	opts = {
   -- 		integrations = {
+  --       treesitter = true,
   -- 			nvimtree = false,
   -- 			ts_rainbow = false,
   -- 			aerial = true,
