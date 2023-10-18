@@ -19,4 +19,5 @@ lua-language-server
 prettier
 stylya
 typescript-language-server
+vue-language-server
 
