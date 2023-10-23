@@ -167,19 +167,20 @@ local plugins = {
         end,
         mode = { "n", "x", "o" },
       },
-      -- {
-      --   "s",
-      --   function()
-      --     require("hop").hint_char2()
-      --   end,
-      --   mode = { "n", "x", "o" },
-      -- },
+      {
+        "m",
+        function()
+          require("hop").hint_char2()
+        end,
+        mode = { "n", "x", "o" },
+      },
       {
         "f",
         function()
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.AFTER_CURSOR,
-            current_line_only = true,
+            -- direction = require'hop.hint'.HintDirection.AFTER_CURSOR,
+            -- current_line_only = true,
           }
         end,
         mode = { "n", "x", "o" },
@@ -187,9 +188,13 @@ local plugins = {
       {
         "F",
         function()
+          -- require("hop").hint_char1 {
+          --   direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+          --   current_line_only = true,
+          -- }
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-            current_line_only = true,
+            -- current_line_only = true,
           }
         end,
         mode = { "n", "x", "o" },
@@ -199,7 +204,7 @@ local plugins = {
         function()
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.AFTER_CURSOR,
-            current_line_only = true,
+            -- current_line_only = true,
             hint_offset = -1,
           }
         end,
@@ -210,7 +215,7 @@ local plugins = {
         function()
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-            current_line_only = true,
+            -- current_line_only = true,
             hint_offset = -1,
           }
         end,
