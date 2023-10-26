@@ -9,15 +9,21 @@ M.override = {
   Comment = {
     italic = true,
   },
-  Function = {
-    italic = true,
-  },
-  Variable = {
-   italic = true,
-  },
   Operator = {
     italic = true,
-  }
+  },
+  -- Define = { italic = true },
+  Variable = { italic = true },
+  -- Type = { italic = true },
+  Function = { italic = true },
+  Keyword = { italic = true },
+  Type = { italic = true },
+  SpecialComment = { italic = true },
+  TSAttribute = { italic = true },
+  TSParameter = { italic = true },
+  TSLabel = { italic = true },
+  TSVariableBuiltin = { italic = true },
+  TSTagAttribute = { italic = true },
 }
 
 

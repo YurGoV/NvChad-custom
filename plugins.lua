@@ -26,7 +26,32 @@ local plugins = {
   }, -- override plugin configs
   { "williamboman/mason.nvim", opts = overrides.mason },
 
+  -- orig
   { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
+  -- custom
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = {
+  --     ensure_installed = {
+  --       -- defaults
+  --       "vim",
+  --       "lua",
+  --
+  --       -- web dev
+  --       "html",
+  --       "css",
+  --       "javascript",
+  --       "typescript",
+  --       "tsx",
+  --       "json",
+  --       -- "vue", "svelte",
+  --
+  --       -- low level
+  --       -- "c",
+  --       -- "zig",
+  --     },
+  --   },
+  -- },
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
@@ -142,19 +167,20 @@ local plugins = {
         end,
         mode = { "n", "x", "o" },
       },
-      -- {
-      --   "s",
-      --   function()
-      --     require("hop").hint_char2()
-      --   end,
-      --   mode = { "n", "x", "o" },
-      -- },
+      {
+        "m",
+        function()
+          require("hop").hint_char2()
+        end,
+        mode = { "n", "x", "o" },
+      },
       {
         "f",
         function()
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.AFTER_CURSOR,
-            current_line_only = true,
+            -- direction = require'hop.hint'.HintDirection.AFTER_CURSOR,
+            -- current_line_only = true,
           }
         end,
         mode = { "n", "x", "o" },
@@ -162,9 +188,13 @@ local plugins = {
       {
         "F",
         function()
+          -- require("hop").hint_char1 {
+          --   direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+          --   current_line_only = true,
+          -- }
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-            current_line_only = true,
+            -- current_line_only = true,
           }
         end,
         mode = { "n", "x", "o" },
@@ -174,7 +204,7 @@ local plugins = {
         function()
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.AFTER_CURSOR,
-            current_line_only = true,
+            -- current_line_only = true,
             hint_offset = -1,
           }
         end,
@@ -185,7 +215,7 @@ local plugins = {
         function()
           require("hop").hint_char1 {
             direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
-            current_line_only = true,
+            -- current_line_only = true,
             hint_offset = -1,
           }
         end,
@@ -230,7 +260,18 @@ local plugins = {
       }
     end,
   },
+  -- TO DELETE
+  {
+    "robitx/gp.nvim",
+    config = function()
+      require("gp").setup()
 
+      -- or setup with your own config (see Install > Configuration in Readme)
+      -- require("gp").setup(conf)
+
+      -- shortcuts might be setup here (see Usage > Shortcuts in Readme)
+    end,
+  },
   -- {
   --   "Exafunction/codeium.vim",
   --   lazy = false,
@@ -241,6 +282,7 @@ local plugins = {
   -- 	name = "catppuccin",
   -- 	opts = {
   -- 		integrations = {
+  --       treesitter = true,
   -- 			nvimtree = false,
   -- 			ts_rainbow = false,
   -- 			aerial = true,
