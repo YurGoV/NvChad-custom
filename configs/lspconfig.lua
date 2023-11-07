@@ -6,6 +6,7 @@ local lspconfig = require "lspconfig"
 -- if you just want default config for the servers then put them in a table
 -- local servers = { "html", "cssls", "eslint_d", "tsserver", "clangd" }
 local servers = { "html", "cssls", "tsserver", "clangd", "volar" }
+-- local servers = { "html", "cssls", "clangd", "volar" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup { on_attach = on_attach, capabilities = capabilities }
@@ -13,7 +14,8 @@ for _, lsp in ipairs(servers) do
   lspconfig["volar"].setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+    -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+    filetypes = { "vue" },
   }
   -- test end
 end
