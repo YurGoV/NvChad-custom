@@ -8,6 +8,7 @@ local plugins = {
 
   -- Override plugin definition options
 
+  -- { "folke/neoconf.nvim", opts = {} },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
