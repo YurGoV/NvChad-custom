@@ -15,7 +15,7 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
     on_attach = on_attach,
     -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-    filetypes = { "vue" },
+    filetypes = {  "vue" },
   }
   -- test end
 end
