@@ -14,8 +14,8 @@ for _, lsp in ipairs(servers) do
   lspconfig["volar"].setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    -- filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-    filetypes = {  "vue" },
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+    -- filetypes = {  "vue" },
   }
   -- test end
 end
