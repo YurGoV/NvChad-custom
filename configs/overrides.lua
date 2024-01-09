@@ -25,9 +25,9 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
-    "c",
     "markdown",
     "markdown_inline",
+    "vue",
   },
   indent = {
     enable = true,
